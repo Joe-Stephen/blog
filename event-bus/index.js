@@ -11,10 +11,10 @@ app.post("/events", async (req, res) => {
   const event = req.body;
   events.push(event);
   const eventEndpoints = [
-    "http://localhost:4000/events", // posts
-    "http://localhost:4001/events", // comments
-    "http://localhost:4002/events", // query
-    "http://localhost:4003/events", // moderation
+    "http://posts-clusterip-srv:4000/events", // posts
+    // "http://localhost:4001/events", // comments
+    // "http://localhost:4002/events", // query
+    // "http://localhost:4003/events", // moderation
   ];
   try {
     const results = await Promise.allSettled(
